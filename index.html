@@ -4,10 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>15パズル</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    #table {
+      width: 700px;
+      height: 700px;
+      background-color: #003399;
+      margin: 0 auto;
+      padding: 10px;
+    }
+    #table td {
+      width: 120px;
+      height: 120px;
+      background-color: white;
+      border-radius: 10px;
+    }
+  </style>
 </head>
-<body>
-  <script src="main.js"></script>
+<body onload="setUp()">
+  <script>
+    function setUp() {
+      const table = document.getElementById('table');
+      const panelNumber = 4;
+      for (let i = 0; i < panelNumber; i++) {
+        const row = document.createElement('tr');
+        for (let i = 0; i < panelNumber; i++) {
+          const panel = document.createElement('td');
+          row.appendChild(panel);
+        }
+        table.appendChild(row);
+      }
+    }
+  </script>
   <table id="table"></table>
 </body>
 </html>
