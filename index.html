@@ -15,8 +15,10 @@
     #table td {
       width: 120px;
       height: 120px;
-      background-color: white;
+      background-color: #fff;
       border-radius: 10px;
+      text-align: center;
+      font-size: 32px;
     }
   </style>
 </head>
@@ -24,16 +26,30 @@
   <script>
     function setUp() {
       const table = document.getElementById('table');
-      const panelNumber = 4;
-      for (let i = 0; i < panelNumber; i++) {
+      const row = 4;
+      const col = 4;
+      const numberSource = createNumber();
+
+      for (let i = 0; i < row; i++) {
         const row = document.createElement('tr');
-        for (let i = 0; i < panelNumber; i++) {
+        for (let i = 0; i < col; i++) {
           const panel = document.createElement('td');
+          panel.textContent = numberSource.splice(Math.floor(Math.random() * numberSource.length), 1)[0]
           row.appendChild(panel);
         }
         table.appendChild(row);
       }
     }
+
+    function createNumber() {
+      const numberSource = [];
+      const maxNumber = 16;
+      for (let i = 1; i < maxNumber; i++) {
+        numberSource.push(i);
+      }
+      return numberSource;
+    }
+
   </script>
   <table id="table"></table>
 </body>
