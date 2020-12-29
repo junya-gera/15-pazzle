@@ -4,10 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>15パズル</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    #table {
+      width: 700px;
+      height: 700px;
+      background-color: #003399;
+      margin: 0 auto;
+      padding: 10px;
+    }
+    #table td {
+      width: 120px;
+      height: 120px;
+      background-color: #fff;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 32px;
+    }
+  </style>
 </head>
-<body>
-  <script src="main.js"></script>
+<body onload="setUp()">
+  <script>
+    function setUp() {
+      const table = document.getElementById('table');
+      const row = 4;
+      const col = 4;
+      const numberSource = createNumber();
+
+      for (let i = 0; i < row; i++) {
+        const row = document.createElement('tr');
+        for (let i = 0; i < col; i++) {
+          const panel = document.createElement('td');
+          panel.textContent = numberSource.splice(Math.floor(Math.random() * numberSource.length), 1)[0]
+          row.appendChild(panel);
+        }
+        table.appendChild(row);
+      }
+    }
+
+    function createNumber() {
+      const numberSource = [];
+      const maxNumber = 16;
+      for (let i = 1; i < maxNumber; i++) {
+        numberSource.push(i);
+      }
+      return numberSource;
+    }
+
+  </script>
   <table id="table"></table>
 </body>
 </html>
