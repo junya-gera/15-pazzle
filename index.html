@@ -17,10 +17,15 @@
 
     function displayPanel() {
       const table = document.getElementById('table');
+      if (table.hasChildNodes) {
+        while(table.firstChild){
+          table.removeChild(table.firstChild)
+        }
+      }
       const row = 4;
       const col = 4;
       const numberSource = createNumber();
-      
+
       for (let i = 0; i < row; i++) {
         const row = document.createElement('tr');
         for (let i = 0; i < col; i++) {
