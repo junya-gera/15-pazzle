@@ -4,28 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>15パズル</title>
-  <style>
-    #table {
-      width: 700px;
-      height: 700px;
-      background-color: #003399;
-      margin: 0 auto;
-      padding: 10px;
-    }
-    #table td {
-      width: 120px;
-      height: 120px;
-      background-color: #fff;
-      border-radius: 10px;
-      text-align: center;
-      font-size: 32px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body onload="setUp()">
   <script>
     function setUp() {
+      const btn = document.getElementById('btn');
+      btn.addEventListener('click', () => {
+        displayPanel();
+      });
+    }
+
+    function displayPanel() {
       const table = document.getElementById('table');
+      if (table.hasChildNodes) {
+        while(table.firstChild){
+          table.removeChild(table.firstChild)
+        }
+      }
       const row = 4;
       const col = 4;
       const numberSource = createNumber();
@@ -52,5 +48,6 @@
 
   </script>
   <table id="table"></table>
+  <div id="btn">START</div>
 </body>
 </html>
