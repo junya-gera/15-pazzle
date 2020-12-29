@@ -1,0 +1,33 @@
+#table {
+  width: 700px;
+  height: 700px;
+  background-color: #003399;
+  margin: 0 auto;
+  padding: 10px;
+}
+#table td {
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 32px;
+}
+
+#btn {
+  cursor: pointer;
+  user-select: none;
+  background-color: #f44336;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 4px 0 #d1483e;
+  margin: 24px auto 0;
+  width: 120px;
+  font-size: 24px;
+}
+
+#btn:active {
+  margin-top: 32px;
+  box-shadow: none;
+}
