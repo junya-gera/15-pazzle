@@ -9,11 +9,18 @@
 <body onload="setUp()">
   <script>
     function setUp() {
+      const btn = document.getElementById('btn');
+      btn.addEventListener('click', () => {
+        displayPanel();
+      });
+    }
+
+    function displayPanel() {
       const table = document.getElementById('table');
       const row = 4;
       const col = 4;
       const numberSource = createNumber();
-
+      
       for (let i = 0; i < row; i++) {
         const row = document.createElement('tr');
         for (let i = 0; i < col; i++) {
