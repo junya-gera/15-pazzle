@@ -6,48 +6,9 @@
   <title>15パズル</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body onload="setUp()">
-  <script>
-    function setUp() {
-      const btn = document.getElementById('btn');
-      btn.addEventListener('click', () => {
-        displayPanel();
-      });
-    }
-
-    function displayPanel() {
-      const table = document.getElementById('table');
-      if (table.hasChildNodes) {
-        while(table.firstChild){
-          table.removeChild(table.firstChild)
-        }
-      }
-      const row = 4;
-      const col = 4;
-      const numberSource = createNumber();
-
-      for (let i = 0; i < row; i++) {
-        const row = document.createElement('tr');
-        for (let i = 0; i < col; i++) {
-          const panel = document.createElement('td');
-          panel.textContent = numberSource.splice(Math.floor(Math.random() * numberSource.length), 1)[0]
-          row.appendChild(panel);
-        }
-        table.appendChild(row);
-      }
-    }
-
-    function createNumber() {
-      const numberSource = [];
-      const maxNumber = 16;
-      for (let i = 1; i < maxNumber; i++) {
-        numberSource.push(i);
-      }
-      return numberSource;
-    }
-
-  </script>
+<body>
   <table id="table"></table>
   <div id="btn">START</div>
+  <script src="main.js"></script>
 </body>
 </html>
